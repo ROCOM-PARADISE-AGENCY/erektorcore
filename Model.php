@@ -14,6 +14,13 @@ class Model extends Database
 {
     public array $errors = [];
 
+
+    public function __construct($config)
+    {
+        parent::__construct($config);
+    }
+
+
     public function loadData($data)
     {
         foreach ($data as $key => $value) {

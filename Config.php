@@ -12,34 +12,6 @@ namespace rpa\erektorcore;
 class Config
 {
     /*
-     * Database Host
-     * @var string
-     */
-    const DB_HOST = 'paradise-agency.ro';
-
-
-    /*
-     * Database name
-     * @var string
-     */
-    const DB_NAME = 'r81953para_erektor';
-
-
-    /*
-     * Database user
-     * @var string
-     */
-    const DB_USER = 'r81953para_web_erektor';
-
-
-    /*
-     * Database password
-     * @var string
-     */
-    const DB_PASS = 'xs+5X@5qXI,N';
-
-
-    /*
      * Show or hide error messages on screen
      * @var boolean
      */

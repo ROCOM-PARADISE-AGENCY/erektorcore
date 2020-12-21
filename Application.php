@@ -33,13 +33,14 @@ class Application
     public static Application $app;
 
 
-    public function __construct()
+    public function __construct($config)
     {
+        $this->config = $config;
         $this->request = new Request();
         $this->response = new Response();
         $this->router = new Router($this->request, $this->response);
         $this->controller = $controller ?? null;
-        $this->model = new Model();
+        $this->model = new Model($this->config);
         $this->view = new View();
         $this->flash_messages = Flash::getMessages();
         $this->current_user = Auth::getUser();
@@ -49,7 +50,14 @@ class Application
 
     public function run() : void
     {
-        $this->router->dispatch($this->request->getPath());
+        try {
+            $this->router->dispatch($this->request->getPath());
+        } catch (\Exception $e) {
+            $this->response->setStatusCode($e->getCode());
+            View::render('_error.php', [
+                'message' => $e->getMessage()
+            ]);
+        }
     }
 
 
