@@ -1,0 +1,15 @@
+{
+    "name": "rocom-paradise-agency/erektorcore",
+    "authors": [
+        {
+            "name": "Alex Negoita",
+            "email": "alexnegoita88@yahoo.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "rpa\\erektorcore\\": "."
+        }
+    }
+}
